@@ -1,0 +1,48 @@
+{
+  "name": "terminal-link-modifier",
+  "displayName": "Terminal Link Modifier",
+  "description": "An extension to modify and customize terminal links in VS Code, allowing automatic path adjustments before opening files.",
+  "version": "1.0.0",
+  "publisher": "i-will-add-this-later",
+  "repository": "https://github.com/DawidWetzler/vscode-terminal-link-modifier.git",
+  "engines": {
+    "vscode": "^1.59.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Terminal Link Modifier",
+      "properties": {
+        "terminalLinkModifier.removalPrefix": {
+          "type": "string",
+          "default": "/var/www/html/",
+          "description": "Prefix to remove from terminal links before searching in VS Code."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "@types/node": "^22",
+    "@types/vscode": "^1.59.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
+  },
+  "dependencies": {
+    "@vscode/dts": "^0.4.1"
+  }
+}
