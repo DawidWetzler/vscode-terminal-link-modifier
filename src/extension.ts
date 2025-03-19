@@ -42,14 +42,10 @@ export function activate(context: vscode.ExtensionContext) {
         "/var/www/html/"
       );
 
-      vscode.window.showInformationMessage(removalPrefix);
-
       let modifiedLink = link.data;
       if (modifiedLink.startsWith(removalPrefix)) {
         modifiedLink = modifiedLink.substring(removalPrefix.length);
       }
-
-      console.log(modifiedLink);
 
       vscode.commands.executeCommand(
         "workbench.action.quickOpen",
